@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  cloudctl:
+    command: sleep 10 & /app/cloudctl login
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./cloudctl/config.yaml:/etc/cloudctl/config.yaml
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:24.0
+    command: start-dev --import-realm
+    environment:
+      KC_HOSTNAME: localhost
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    volumes:
+      - ./keycloak/cloud-realm.json:/opt/keycloak/data/import/cloud-realm.json
+    ports:
+      - "8000:8080"

@@ -21,6 +21,7 @@ func newLoginCmd(c *config) *cobra.Command {
 		Short: "login user and receive token",
 		Long:  "login and receive token that will be used to authenticate commands.",
 		RunE: func(cmd *cobra.Command, args []string) error {
+			print("let's login\n")
 			var (
 				console io.Writer
 				handler auth.TokenHandlerFunc

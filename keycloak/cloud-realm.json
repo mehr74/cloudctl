@@ -1,0 +1,76 @@
+{
+  "id" : "cloud",
+  "realm" : "cloud",
+  "displayName" : "Cloud Access Demo",
+  "enabled" : true,
+  "registrationAllowed" : true,
+  "rememberMe" : true,
+  "resetPasswordAllowed" : true,
+  "roles" : {
+    "realm" : [ {
+      "id" : "b7ad0048-fb8c-45c0-89d6-821843bf1a53",
+      "name" : "serviceAccount",
+      "composite" : false,
+      "clientRole" : false,
+      "containerId" : "cloud",
+      "attributes" : { }
+    }, {
+      "id" : "4ba9446c-7fb4-4678-87c0-b5fba1bd30c7",
+      "name" : "user",
+      "composite" : false,
+      "clientRole" : false,
+      "containerId" : "cloud",
+      "attributes" : { }
+    }, {
+      "id" : "9f9d5481-a26a-4017-b106-0efbd7025c99",
+      "name" : "admin",
+      "composite" : false,
+      "clientRole" : false,
+      "containerId" : "cloud",
+      "attributes" : { }
+    }, {
+      "id" : "584081fd-a041-4527-8a24-8be55bfcd1a1",
+      "name" : "unicorn",
+      "composite" : false,
+      "clientRole" : false,
+      "containerId" : "cloud",
+      "attributes" : { }
+    } ]
+  },
+  "clients" : [ {
+    "id" : "8f5e510a-3861-4b13-b000-5ddb042d442f",
+    "clientId" : "deutsche-mehrshad",
+    "name": "Cloud Access for Deutsche Mehrshad Application",
+    "rootUrl": "http://localhost:8081",
+    "baseUrl": "http://localhost:8081",
+    "surrogateAuthRequired" : false,
+    "enabled" : true,
+    "alwaysDisplayInConsole" : false,
+    "clientAuthenticatorType" : "client-secret",
+    "secret" : "08d171bf-ba03-44db-8279-f678d68021d7",
+    "redirectUris" : [ "/shop", "http://keycloak:8081/shop" ],
+    "webOrigins" : [ ],
+    "notBefore" : 0,
+    "bearerOnly" : false,
+    "consentRequired" : false,
+    "standardFlowEnabled" : true,
+    "implicitFlowEnabled" : false,
+    "directAccessGrantsEnabled" : true,
+    "serviceAccountsEnabled" : true,
+    "publicClient" : false,
+    "frontchannelLogout" : false,
+    "protocol" : "openid-connect",
+    "attributes" : {
+      "backchannel.logout.url": "http://bookshop:8081/back-channel-logout",
+      "post.logout.redirect.uris" : "/*",
+      "use.refresh.tokens" : "true"
+    },
+    "fullScopeAllowed" : true,
+    "defaultClientScopes" : [ "web-origins", "acr", "profile", "roles", "email" ],
+    "optionalClientScopes" : [ ]
+  } ],
+  "users": [ ],
+  "attributes" : {
+    "acr.loa.map" : "{\"bronze\":\"0\",\"silver\":\"1\",\"gold\":\"2\"}"
+  }
+}
